@@ -1,0 +1,12 @@
+{
+    "installedESLint": true,
+    "extends": [
+      "plugin:react/recommended",
+      "standard"
+    ],
+    "plugins": [
+        "promise",
+        "react",
+        "standard"
+    ]
+}
