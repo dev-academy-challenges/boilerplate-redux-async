@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-export const receivePosts = (subreddit, posts) => {
+export const receivePosts = (posts) => {
   return {
     type: 'RECEIVE_POSTS',
     posts: posts.map(post => post.data)
@@ -9,14 +9,14 @@ export const receivePosts = (subreddit, posts) => {
 
 export function fetchPosts (subreddit) {
   return (dispatch) => {
-    return request
+    request
       .get(`http://www.reddit.com/r/${subreddit}.json`)
       .end((err, res) => {
         if (err) {
           console.error(err.message)
           return
         }
-        dispatch(receivePosts(subreddit, res.body.data.children))
+        dispatch(receivePosts(res.body.data.children))
       })
   }
 }
