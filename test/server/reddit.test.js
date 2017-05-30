@@ -1,11 +1,11 @@
-const test = require('ava')
-const request = require('supertest')
-const nock = require('nock')
+import test from 'ava'
+import request from 'supertest'
+import nock from 'nock'
 
-const server = require('../../server/server')
+import server from '../../server/server'
 
 test.cb('GET /api/reddit/subreddit', t => {
-  nock('http://www.reddit.com')
+  const scope = nock('http://www.reddit.com')
     .get('/r/bananas.json')
     .reply(200, {data: {children: {msg: 'yay, bananas'}}})
 
@@ -13,6 +13,8 @@ test.cb('GET /api/reddit/subreddit', t => {
     .get('/api/reddit/subreddit/bananas')
     .expect(200)
     .end((err, res) => {
+      scope.done()
+      t.is(err, null)
       t.is(res.body.msg, 'yay, bananas')
       t.end()
     })

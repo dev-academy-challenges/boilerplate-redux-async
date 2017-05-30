@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --watch server server/index & webpack --watch",
     "test": "ava -v test/**/*.test.js",
-    "eslint": "eslint src"
+    "eslint": "eslint src test"
   },
   "keywords": [
     "react",
@@ -39,6 +39,10 @@
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
+   "ava": {
+    "require": "babel-register",
+    "babel": "inherit"
+  }, 
   "babel": {
     "presets": [
       "es2015",
