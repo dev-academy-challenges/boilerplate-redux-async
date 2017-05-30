@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "React Redux with simple async action",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline",
+    "eslint": "eslint src"
   },
   "keywords": [
     "react",
