@@ -10781,7 +10781,6 @@ var receivePosts = exports.receivePosts = function receivePosts(posts) {
 };
 
 function fetchPosts(subreddit) {
-  console.log(subreddit);
   return function (dispatch) {
     _superagent2.default.get('/api/reddit/subreddit/' + subreddit).end(function (err, res) {
       if (err) {
@@ -10846,6 +10845,10 @@ var _react = __webpack_require__(14);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(63);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Post = function Post(_ref) {
@@ -10858,7 +10861,7 @@ var Post = function Post(_ref) {
 };
 
 Post.propTypes = {
-  title: _react.PropTypes.string.isRequired
+  title: _propTypes2.default.string.isRequired
 };
 
 exports.default = Post;
@@ -10877,6 +10880,10 @@ Object.defineProperty(exports, "__esModule", {
 var _react = __webpack_require__(14);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(63);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _Post = __webpack_require__(101);
 
@@ -10899,7 +10906,7 @@ var Subreddit = function Subreddit(_ref) {
 };
 
 Subreddit.propTypes = {
-  subreddits: _react.PropTypes.array.isRequired
+  subreddits: _propTypes2.default.array.isRequired
 };
 
 exports.default = Subreddit;
