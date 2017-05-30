@@ -10,13 +10,13 @@ export const receivePosts = (posts) => {
 export function fetchPosts (subreddit) {
   return (dispatch) => {
     request
-      .get(`http://www.reddit.com/r/${subreddit}.json`)
+      .get(`/api/reddit/subreddit/${subreddit}`)
       .end((err, res) => {
         if (err) {
           console.error(err.message)
           return
         }
-        dispatch(receivePosts(res.body.data.children))
+        dispatch(receivePosts(res.body))
       })
   }
 }
