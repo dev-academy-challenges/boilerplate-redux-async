@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon --watch server server/index & webpack --watch",
     "test": "ava -v test/**/*.test.js",
-    "eslint": "eslint src test"
+    "eslint": "eslint src test",
+    "start": "node server",
+    "postinstall": "webpack"
   },
   "keywords": [
     "react",
@@ -14,30 +16,27 @@
   ],
   "author": "EDA",
   "license": "ISC",
-  "devDependencies": {
-    "ava": "^0.19.1",
+  "dependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.24.1",
-    "enzyme": "^2.8.2",
+    "body-parser": "^1.17.2",
     "eslint": "^3.3.1",
     "eslint-config-standard": "^5.3.5",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-react": "^6.1.2",
     "eslint-plugin-standard": "^2.0.0",
-    "nock": "^9.0.13",
-    "nodemon": "^1.11.0",
     "prop-types": "^15.5.10",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "supertest": "^3.0.0",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "express": "^4.15.3",
+    "superagent": "^2.2.0"
   },
    "ava": {
     "require": "babel-register",
@@ -51,8 +50,11 @@
     ]
   },
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "superagent": "^2.2.0"
+    "ava": "^0.19.1",
+    "enzyme": "^2.8.2",
+    "nock": "^9.0.13",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0",
+    "webpack-dev-server": "^2.4.5"
   }
 }
