@@ -4,7 +4,7 @@
   "description": "React Redux with simple async action",
   "main": "server/index",
   "scripts": {
-    "start": "nodemon --watch server server/index & webpack --watch",
+    "dev": "nodemon --watch server & webpack --watch",
     "test": "ava -v test/**/*.test.js",
     "eslint": "eslint src test",
     "start": "node server",
