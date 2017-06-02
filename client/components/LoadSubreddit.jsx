@@ -8,6 +8,4 @@ let LoadSubreddit = ({dispatch}) => (
     >Fetch Posts</button>
 )
 
-LoadSubreddit = connect()(LoadSubreddit)
-
-export default LoadSubreddit
+export default connect()(LoadSubreddit)
