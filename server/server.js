@@ -6,6 +6,6 @@ var server = express()
 
 server.use(express.static(path.join(__dirname, '../public')))
 
-server.use('/api/reddit', redditRoutes)
+server.use('/api/v1/reddit', redditRoutes)
 
 module.exports = server

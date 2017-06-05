@@ -28,7 +28,7 @@ export function fetchPosts (subreddit) {
   return (dispatch) => {
     dispatch(requestPosts())
     request
-      .get(`/api/reddit/subreddit/${subreddit}`)
+      .get(`/api/v1/reddit/subreddit/${subreddit}`)
       .end((err, res) => {
         if (err) {
           dispatch(showError(err.message))
