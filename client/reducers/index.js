@@ -9,4 +9,3 @@ export default combineReducers({
   subreddits,
   waiting
 })
-

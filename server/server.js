@@ -1,8 +1,8 @@
-var path = require('path')
-var express = require('express')
+const path = require('path')
+const express = require('express')
 
-var redditRoutes = require('./reddit')
-var server = express()
+const redditRoutes = require('./reddit')
+const server = express()
 
 server.use(express.static(path.join(__dirname, '../public')))
 

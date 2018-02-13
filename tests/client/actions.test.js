@@ -1,18 +1,17 @@
-import test from 'ava'
+/* global test expect */
 import nock from 'nock'
 
 import * as actions from '../../client/actions'
 
-test.cb('fetchPosts', t => {
+test('fetchPosts', () => {
   const scope = nock('http://localhost:80')
-    .get('/api/reddit/subreddit/bananas')
+    .get('/api/v1/reddit/subreddit/bananas')
     .reply(200, [{data: 'yay, bananas'}])
 
   actions.fetchPosts('bananas')((actual) => {
     scope.done()
-    t.is(actual.type, 'RECEIVE_POSTS')
-    t.is(actual.posts.length, 1)
-    t.is(actual.posts[0], 'yay, bananas')
-    t.end()
+    expect(actual.type).toBe('RECEIVE_POSTS')
+    expect(actual.posts.length).toBe(1)
+    expect(actual.posts[0]).toBe('yay, bananas')
   })
 })
