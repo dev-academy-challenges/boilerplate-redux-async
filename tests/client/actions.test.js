@@ -1,17 +1,19 @@
-/* global test expect */
 import nock from 'nock'
 
 import * as actions from '../../client/actions'
 
 test('fetchPosts', () => {
-  const scope = nock('http://localhost:80')
+  const scope = nock('http://localhost')
     .get('/api/v1/reddit/subreddit/bananas')
     .reply(200, [{data: 'yay, bananas'}])
 
-  actions.fetchPosts('bananas')((actual) => {
-    scope.done()
-    expect(actual.type).toBe('RECEIVE_POSTS')
-    expect(actual.posts.length).toBe(1)
-    expect(actual.posts[0]).toBe('yay, bananas')
-  })
+  const dispatch = jest.fn()
+
+  return actions.fetchPosts('bananas')(dispatch)
+    .then(() => {
+      expect(dispatch.mock.calls.length).toBe(2)
+      expect(dispatch.mock.calls[0][0].type).toBe('REQUEST_POSTS')
+      expect(dispatch.mock.calls[1][0].type).toBe('RECEIVE_POSTS')
+      scope.done()
+    })
 })

@@ -27,14 +27,13 @@ export const showError = (errorMessage) => {
 export function fetchPosts (subreddit) {
   return (dispatch) => {
     dispatch(requestPosts())
-    request
+    return request
       .get(`/api/v1/reddit/subreddit/${subreddit}`)
-      .end((err, res) => {
-        if (err) {
-          dispatch(showError(err.message))
-          return
-        }
+      .then(res => {
         dispatch(receivePosts(res.body))
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
       })
   }
 }
