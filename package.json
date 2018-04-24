@@ -25,7 +25,6 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "bable-loader": "^0.0.1-security",
     "enzyme": "^3.3.0",
     "jest": "^22.2.2",
     "nock": "^9.1.6",
