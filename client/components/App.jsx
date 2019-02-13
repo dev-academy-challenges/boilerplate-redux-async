@@ -8,8 +8,9 @@ import WaitIndicator from './WaitIndicator'
 const App = () => (
   <div className='app'>
     <ErrorMessage />
-    <LoadSubreddit />
-    <WaitIndicator />
+    <LoadSubreddit>
+      <WaitIndicator />
+    </LoadSubreddit>
     <SubredditList />
   </div>
 )

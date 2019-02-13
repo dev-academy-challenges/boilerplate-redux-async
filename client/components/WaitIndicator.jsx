@@ -2,11 +2,9 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 const WaitIndicator = (props) => {
-  return (
-    <div className='error'>
-      {props.waiting && <img src='/animated-circle.gif' />}
-    </div>
-  )
+  return props.waiting
+    ? <img className='wait-indicator' src='/animated-circle.gif' />
+    : null
 }
 
 function mapStateToProps (state) {
