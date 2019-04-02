@@ -41,8 +41,8 @@
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "superagent": "^4.0.0",
-    "supertest": "^3.3.0",
+    "superagent": "^5.0.2",
+    "supertest": "^4.0.2",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
   },
