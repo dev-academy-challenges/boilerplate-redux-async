@@ -35,7 +35,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^25.1.0",
     "nock": "^11.8.2",
-    "nodemon": "^1.19.1",
+    "nodemon": "^2.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.3",
