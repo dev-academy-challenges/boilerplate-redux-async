@@ -1,10 +1,12 @@
 {
   "name": "boilerplate-redux-async",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Redux with simple async action",
   "main": "server/index",
   "scripts": {
-    "dev": "nodemon --watch server & webpack --watch",
+    "dev": "run-p dev:server dev:client",
+    "dev:client": "webpack --watch",
+    "dev:server": "nodemon --watch server",
     "test": "jest --watchAll",
     "start": "node server",
     "postinstall": "webpack"
@@ -19,6 +21,11 @@
     "plugins": [
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
+  "jest": {
+    "setupFiles": [
+      "./tests/client/setup.js"
     ]
   },
   "dependencies": {
@@ -36,6 +43,7 @@
     "jest": "^25.1.0",
     "nock": "^11.8.2",
     "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.3",
@@ -45,10 +53,5 @@
     "supertest": "^4.0.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
-  },
-  "jest": {
-    "setupFiles": [
-      "./tests/client/setup.js"
-    ]
   }
 }
